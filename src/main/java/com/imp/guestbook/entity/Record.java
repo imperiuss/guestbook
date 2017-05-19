@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Guest book entity
+ * Guest record entity
  *
  */
 @Entity

@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
- *
+ * Config for default view
  */
 @Configuration
 public class IndexConfig extends WebMvcConfigurerAdapter {

@@ -6,10 +6,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
- *
+ * Dao for record entity
  */
 
 public interface RecordDao extends PagingAndSortingRepository<Record, Integer> {
 
-    Page<Record> findAllByOrderByIdDesc(Pageable pageable);
+    Page<Record> findAllByOrderByDateDesc(Pageable pageable);
 }

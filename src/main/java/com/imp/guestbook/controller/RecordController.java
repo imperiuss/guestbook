@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- *
+ * REST api for main page
  */
 
 @RestController
@@ -25,14 +25,13 @@ public class RecordController {
     }
 
     @GetMapping(value = "/records")
-    Page<Record> list (Pageable pageable){
-        Page<Record> records = recordService.getOrderedRecords(pageable);
-        return records;
+    Page<Record> recordPage (Pageable pageable){
+        return recordService.getOrderedRecords(pageable);
     }
 
     @PostMapping(value = "/saverecord")
     public void saveRecord (@RequestBody Record record){
-        System.out.println(record);
+        recordService.saveRecord(record);
     }
 
 }

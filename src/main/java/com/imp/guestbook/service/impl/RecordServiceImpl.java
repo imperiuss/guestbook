@@ -28,6 +28,11 @@ public class RecordServiceImpl implements RecordService {
 
     @Override
     public Page<Record> getOrderedRecords(Pageable pageable) {
-        return recordDao.findAllByOrderByIdDesc(pageable);
+        return recordDao.findAllByOrderByDateDesc(pageable);
+    }
+
+    @Override
+    public void saveRecord(Record record) {
+        recordDao.save(record);
     }
 }

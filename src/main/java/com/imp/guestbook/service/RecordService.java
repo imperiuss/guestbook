@@ -12,4 +12,6 @@ public interface RecordService {
 
     Page<Record> getOrderedRecords(Pageable pageable);
 
+    void saveRecord(Record record);
+
 }

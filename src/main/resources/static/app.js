@@ -49,12 +49,13 @@ app.controller('RecordCtrl', ['$scope','RecordService', '$http',
                 date : new Date()
             };
             var res = $http.post('/saverecord', dataObj);
-            $scope.gridOptions.data.push(dataObj);
+            res.success(function(data, status, headers, config){
+                // $scope.gridOptions.data.push(dataObj);
+                $scope.gridOptions.data.unshift(dataObj);
+            });
             res.error(function(data, status, headers, config) {
                 alert( "failure message: " + JSON.stringify({data: data}));
             });
-            // Making the fields empty
-            //
             $scope.name='';
             $scope.message='';
             $scope.email='';
