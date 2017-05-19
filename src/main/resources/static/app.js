@@ -3,7 +3,7 @@ app.controller('RecordCtrl', ['$scope','RecordService', '$http',
     function ($scope, RecordService, $http) {
         var paginationOptions = {
             pageNumber: 1,
-            pageSize: 5,
+            pageSize: 10,
             sort: null
         };
 
@@ -15,8 +15,8 @@ app.controller('RecordCtrl', ['$scope','RecordService', '$http',
         });
 
         $scope.gridOptions = {
-            paginationPageSizes: [1, 3, 5],
             paginationPageSize: paginationOptions.pageSize,
+            enablePaginationControls: false,
             enableColumnMenus:false,
             useExternalPagination: true,
             columnDefs: [
@@ -50,7 +50,6 @@ app.controller('RecordCtrl', ['$scope','RecordService', '$http',
             };
             var res = $http.post('/saverecord', dataObj);
             res.success(function(data, status, headers, config){
-                // $scope.gridOptions.data.push(dataObj);
                 $scope.gridOptions.data.unshift(dataObj);
             });
             res.error(function(data, status, headers, config) {
